@@ -14,8 +14,7 @@ cd fonts
 cd ..
 rm -rf fonts
 
-echo "zsh" >> ~/.bashrc
-
+chsh -s /bin/zsh
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
@@ -26,15 +25,12 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc
 
 
-rbenv install 2.6.3
-rbenv global 2.6.3
-
-
-gem install bundler
+zsh -c "rbenv install 2.6.3" 
+zsh -c "rbenv global 2.6.3" 
+zsh -c "gem install bundler"
 
 sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
 wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install -y postgresql-common
 sudo apt-get install -y postgresql-9.5 libpq-dev 
-
