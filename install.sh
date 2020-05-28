@@ -15,21 +15,21 @@ cd ..
 rm -rf fonts
 
 echo "zsh" >> ~/.bashrc
-exec $SHELL
+zsh
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-exec $SHELL
+zsh
 
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc
-exec $SHELL
+zsh
 
 rbenv install 2.4.0
 rbenv global 2.4.0
 
-exec $SHELL
+zsh
 gem install bundler
 
 sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
