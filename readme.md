@@ -1,1 +1,1 @@
-curl https://raw.githubusercontent.com/alperenbozkurt/install-script-for-alperen-os/master/install.sh && ./install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/alperenbozkurt/install-script-for-alperen-os/master/install.sh)"
