@@ -1,6 +1,9 @@
 cd
 
-sudo apt-get update
+echo "Lütfen sudo Parolanızı Giriniz"
+read PASSWORD
+
+echo $PASSWORD | sudo apt-get update
 sudo apt-get install -y git git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 redis-server libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs zsh
 
 git config --global user.name "Alperen Bozkurt"
@@ -14,7 +17,7 @@ cd fonts
 cd ..
 rm -rf fonts
 
-chsh -s /bin/zsh
+echo $PASSWORD | chsh -s /bin/zsh
 
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
