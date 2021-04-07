@@ -33,3 +33,5 @@ zsh -ic "rbenv global 3.0.0"
 zsh -ic "gem install bundler"
 
 sudo apt-get install -y postgresql libpq-dev
+
+sudo -u postgres createuser $USER -s
