@@ -28,12 +28,8 @@ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc
 
 
-zsh -ic "rbenv install 2.6.3" 
-zsh -ic "rbenv global 2.6.3" 
+zsh -ic "rbenv install 3.0.0" 
+zsh -ic "rbenv global 3.0.0" 
 zsh -ic "gem install bundler"
 
-sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
-wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install -y postgresql-common
-sudo apt-get install -y postgresql-9.5 libpq-dev 
+sudo apt-get install -y postgresql libpq-dev
